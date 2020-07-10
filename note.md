@@ -91,17 +91,16 @@ npm install jquery@3.3.1 popper.js@1.12.9 --save
   - `npm install font-awesome --save`
 2. Bootstrap Social Icon
   - `npm install bootstrap-social --save`
-3. Resources and Links
-  - Information Architecture
+3. Information Architecture
     - [Information Architecture 101: Techniques and Best Practices](https://www.webfx.com/blog/web-design/information-architecture-101-techniques-and-best-practices/) (Quick introduction to Information architecture with respect to website design)
     - [What is information architecture?](https://www.steptwo.com.au/papers/kmc_whatisinfoarch/) (Good definition and explanation about the topic)
     - [Designing A Winning Navigation Menu: Ideas and Inspirations](https://www.hongkiat.com/blog/navigation-design-ideas-inspiration/) (Good suggestions on how to design navigation for a website)
     - [Are You Making These Common Website Navigation Mistakes?](https://neilpatel.com/blog/common-website-navigation-mistakes/) (Worth reading at least to learn what not to do)
     - [3 Reasons We Should Stop Using Navigation Bars](http://www.webdesignerdepot.com/2014/01/3-reasons-we-should-stop-using-navigation-bars/) (A provocative view on navigation bars)
-  - Breadcrumbs
+4. Breadcrumbs
     - [Breadcrumb Navigation Examined: Best Practices & Examples](https://www.hongkiat.com/blog/breadcrumb-navigation-examined-best-practices-examples/) (Great suggestions on using breadcrumbs for navigation)
     - [Breadcrumb Navigation: A Guide On Types, Benefits And Best Practices](https://www.woorank.com/en/blog/breadcrumb-navigation-a-guide-to-types-benefits-and-best-practices) (Another great resource on types and usage of breadcrumbs)
-  - Icon Fonts
+5. Icon Fonts
     - [Why And How To Use Icon Fonts](http://vanseodesign.com/web-design/icon-fonts/) (a good overview of icon fonts)
     - [Icon Fonts are Awesome](https://css-tricks.com/examples/IconFont/) (another good introduction to icon fonts)
     - [Font Awesome](https://fontawesome.com/6?next=%2F%3Ffrom%3Dio) (one of the most popular icon fonts)
