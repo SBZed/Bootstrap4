@@ -74,3 +74,21 @@ npm install jquery@3.3.1 popper.js@1.12.9 --save
   - .flex-unordered - Displayed between first and last.
   - there is also option like `*-pull-*` `*-push-*`
 - `list-unstyled`
+
+### Navbars and Breadcumbs
+1. .navbar .navbar-dark .navbar-expand-sm
+  - navbar-brand
+  - navbar-nav
+    - nav-item
+    - nav-link
+2. .navbar-toggler
+3. .navbar-collapse
+4. .breadcrumb
+  - .breadcrumb-item
+
+### Fonts
+
+1. Font Awesome
+  - `npm install font-awesome --save`
+2. Bootstrap Social Icon
+  - `npm install bootstrap-social --save`
