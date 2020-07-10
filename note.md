@@ -102,4 +102,4 @@ npm install jquery@3.3.1 popper.js@1.12.9 --save
     - option
   - textarea((.form-control)[e.g. rows="12"]
 
-2. (When To Use The Button Element)[https://css-tricks.com/use-button-element/] (The multifaceted button element)
+2. [When To Use The Button Element](https://css-tricks.com/use-button-element/) (The multifaceted button element)
