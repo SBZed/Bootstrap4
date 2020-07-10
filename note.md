@@ -87,8 +87,19 @@ npm install jquery@3.3.1 popper.js@1.12.9 --save
   - .breadcrumb-item
 
 ### Fonts
-
 1. Font Awesome
   - `npm install font-awesome --save`
 2. Bootstrap Social Icon
   - `npm install bootstrap-social --save`
+
+### Forms
+1. .form-group
+  - label(.col-form-label)[for]
+  - .input(.form-control, .form-check-input) [type, id, name, placeholder] (NOTE: `id` == `for` in label)
+    - type: text, tel, email, checkbox, submit
+  - .form-check
+  - select((.form-control)
+    - option
+  - textarea((.form-control)[e.g. rows="12"]
+
+2. (When To Use The Button Element)[https://css-tricks.com/use-button-element/] (The multifaceted button element)
