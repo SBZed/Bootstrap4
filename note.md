@@ -143,3 +143,21 @@ npm install jquery@3.3.1 popper.js@1.12.9 --save
     </footer>
 </blockquote>
 ```
+
+### Images and Media
+#### Images
+- `img-fluid` - for responsive image
+- `img-thumbnail` - for border
+- `rounded`*{top|bottom|left|right} - for rounded edge
+- `rounded-circle` - for circle image
+- Images with cards
+  - card-img-top
+
+#### Media
+- `.media` class
+- `.media-body`
+- `img` tag need some `.d-flex` class to show img to left side of content
+
+#### Responsive embed
+- `.embed-responsive` `.embed-responsive-16by9`
+- `iframe`, `video` & `object` tag with class `.embed-responsive-item`
