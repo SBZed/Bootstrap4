@@ -119,3 +119,27 @@ npm install jquery@3.3.1 popper.js@1.12.9 --save
   - textarea((.form-control)[e.g. rows="12"]
 
 2. [When To Use The Button Element](https://css-tricks.com/use-button-element/) (The multifaceted button element)
+
+### Table and Cards
+
+#### Description List
+- Description List Tag - `dl`
+  - Description term - `dt`
+  - Term description - `dd`
+- The <dd> tag is used to describe a term/name in a description list.
+- The <dd> tag is used in conjunction with <dl> (defines a description list) and <dt> (defines terms/names).
+
+#### BLockquote
+- `blockquote` tag with `.blockquote` css class
+- `footer` tag with `.blockquote-footer` css class
+- `cite` tag
+```html
+<blockquote class="blockquote">
+    <p class="mb-0">You better cut the pizza in four pieces because
+        I'm not hungry enough to eat six.</p>
+    <footer class="blockquote-footer">Yogi Berra,
+        <cite title="Source Title">The Wit and Wisdom of Yogi Berra,
+            P. Pepe, Diversion Books, 2014</cite>
+    </footer>
+</blockquote>
+```
