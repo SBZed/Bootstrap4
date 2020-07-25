@@ -157,7 +157,23 @@ npm install jquery@3.3.1 popper.js@1.12.9 --save
 - `.media` class
 - `.media-body`
 - `img` tag need some `.d-flex` class to show img to left side of content
+- `.media-top`, `.media-bottom` to align image to media
 
 #### Responsive embed
 - `.embed-responsive` `.embed-responsive-16by9`
 - `iframe`, `video` & `object` tag with class `.embed-responsive-item`
+
+### Alerts, Badges, Progress bars
+
+#### Badge
+- .badge .badge-danger .badge-pill .badge-secondary
+
+#### Alert
+- .alert .alert-warning .alert-success 
+- .alert-dismissible : allow to include cross sign which user can use to close
+- <div role="alert"></div>
+
+#### progress bar
+- .progress
+  - .progress-bar .progress-bar-striped .bg-danger
+- <div role="progressbar"></div>
