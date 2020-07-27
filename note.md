@@ -43,7 +43,6 @@ npm install jquery@3.3.1 popper.js@1.12.9 --save
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 ```
 - Why we put javascript at bottom of page
-
 > Because when you are loading the page from a web server, you want the CSS classes to be loaded immediately so that as the page starts rendering, when the JavaScript is fetched, the JavaScript needs to execute in order to make changes to your page with the JavaScript code, and that will take a little bit of time. So you don't want the user to be waiting for the entire page to be loaded before they see something in their browser window. So that's why we normally load the JavaScript classes towards the end of our html page just before the body tech.
 
 # Responsive Design
@@ -121,7 +120,6 @@ npm install jquery@3.3.1 popper.js@1.12.9 --save
 2. [When To Use The Button Element](https://css-tricks.com/use-button-element/) (The multifaceted button element)
 
 ### Table and Cards
-
 #### Description List
 - Description List Tag - `dl`
   - Description term - `dt`
@@ -177,3 +175,43 @@ npm install jquery@3.3.1 popper.js@1.12.9 --save
 - .progress
   - .progress-bar .progress-bar-striped .bg-danger
 - <div role="progressbar"></div>
+
+## Bootstrap JavaScript Components
+- to include **javascript** in html code you need to write lot of code in JS. need separate js file
+- to avoid this next best things is **jquery** which also need code but little. which we include in 
+<script></script> tags.
+- Where as **Bootstrap Js Component** don't need writie single line of code and we can use in HTML markup easily.
+i.e. `data-*` attributes in tags (data-toggle, data-spy)
+
+### Tabs and Tabbed Navigation
+- Tabs require Javascript support to be enabled for navigating the content.
+- below, `data-toggle` is bootstrap JS component
+- ul.nav.nav-tabs
+  - li.nav-item
+    - a.nav-link.active[role="tab", data-toggle="tab" href=demo]
+- div.tab-content
+  - div.tab-pane.fade.show.active#demo[role="tabpanel"]
+```html
+<!-- Tab Navigation -->
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+      <a href="#peter" class="nav-link active" role="tab" data-toggle="tab">Peter Pan, CEO </a>
+  </li>
+  ..
+  .
+  <li class="nav-item">
+      <a href="#saurabh" class="nav-link" role="tab" data-toggle="tab">Saurabh Zinjad, Founder </a>
+  </li>
+</ul>
+<!-- Tab Content -->
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="peter" role="tabpanel">
+    <!-- Content -->
+  </div>
+  ..
+  .
+  <div class="tab-pane fade" id="peter" role="tabpanel">
+    <!-- Content -->
+  </div>
+</div>
+```
