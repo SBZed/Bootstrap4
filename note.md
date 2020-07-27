@@ -244,3 +244,22 @@ i.e. `data-*` attributes in tags (data-toggle, data-spy)
   ...Other cards
 </div>
 ```
+
+### 3. Revealing Content
+1. tooltips
+2. popovers
+3. modals
+
+#### 1. Tooltip
+- `data-html=true`: can style tooltip content using html markup.
+```html
+<a role="button" href="#reserveform" class="btn-block nav-link btn-warning" data-toggle="tooltip" data-html="true" title="Or Call  us at <br><strong>+852 12345678</strong>" data-placement="bottom">
+    Reserve Table
+</a>
+
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    })
+</script>
+```
