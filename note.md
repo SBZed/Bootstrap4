@@ -183,7 +183,10 @@ npm install jquery@3.3.1 popper.js@1.12.9 --save
 - Where as **Bootstrap Js Component** don't need writie single line of code and we can use in HTML markup easily.
 i.e. `data-*` attributes in tags (data-toggle, data-spy)
 
-### Tabs and Tabbed Navigation
+1. Tabs and Tabbed Navigation
+2. Collapse and Accordion
+
+### 1. Tabs and Tabbed Navigation
 - Tabs require Javascript support to be enabled for navigating the content.
 - below, `data-toggle` is bootstrap JS component
 - ul.nav.nav-tabs
@@ -213,5 +216,31 @@ i.e. `data-*` attributes in tags (data-toggle, data-spy)
   <div class="tab-pane fade" id="peter" role="tabpanel">
     <!-- Content -->
   </div>
+</div>
+```
+
+### 2. Collapse and Accordion
+- Accordion's Emmet formula
+```html
+#accordion>(.card>(.card-header#agumbehead[role="tab"]>h3.mb-0>a.collapsed[data-toggle="collapse" data-target="#agumbe"])+(.collapse#agumbe[data-parent="#accordion"]>.card-body))*number_of_cards
+```
+
+```html
+<div id="accordion">
+  <div class="card">
+      <div class="card-header" role="tab" id="peterhead">
+          <h3 class="mb-0">
+              <a data-toggle="collapse" data-target="#peter">
+                  <!-- Heading -->
+              </a>
+          </h3>
+      </div>
+      <div class="collapse show" id="peter" data-parent="#accordion">
+          <div class="card-body">
+            <!-- Content -->
+          </div>
+      </div>
+  </div>
+  ...Other cards
 </div>
 ```
