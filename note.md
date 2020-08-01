@@ -283,3 +283,123 @@ $(selector).action()
 - selector: to query and find html element
 - action: action to be performed on the elements
 - e.g. $("p").hide()
+
+### CSS Preprocessors
+1. LESS
+2. SCSS/SASS
+
+you can import custom defined scss/less file into other scss/less file.
+```css
+@import "foo.min.css"
+```
+
+#### 1. LESS
+- define variables
+
+
+#### 1. Variable Declaration and Usage
+```css
+/*2. SCSS*/
+$my-var: 300px;
+.nav-height {
+  height: $my-var;
+}
+
+/*1. LESS*/
+@my-var: 300px;
+.nav-height {
+  height: @my-var;
+}
+```
+
+#### 2. Nesting
+```css
+.carousel {
+  background: black;
+  .carousel-item {
+    height: 300px;
+    .img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-height: 300px;
+    }
+  }
+}
+```
+
+#### 3. Mixin
+```css
+/*Scss*/
+@mixin .zero-margin {
+  margin: 0 auto;
+  background: white;
+}
+
+.row-header {
+  @include zero-margin;
+  padding: 0px auto;
+}
+
+/*Less*/
+.zero-margin {
+  margin: 0 auto;
+  background: white;
+}
+
+.row-header {
+  .zero-margin;
+  padding: 0px auto;
+}
+```
+
+#### 3. Mixin with parameters
+```css
+/*Scss*/
+@mixin .zero-margin($pad-up-dn, $pad-left-right) {
+  margin: 0 auto;
+  padding: $pad-up-dn $pad-left-right;
+}
+
+.row-header {
+  @include zero-margin(0px, 0px);
+  padding: 0px auto;
+}
+
+.row-content {
+  @include zero-margin(50px, 70px);
+  padding: 0px auto;
+  background: white;
+}
+
+/*Less*/
+.zero-margin(@pad-up-dn: 0px, @pad-left-right: 0px) {
+  margin: 0 auto;
+  padding: @pad-up-dn @pad-left-right;
+}
+
+.row-header {
+  .zero-margin();
+  padding: 0px auto;
+}
+
+.row-content {
+  .zero-margin(50px, 0px);
+  min-height: 400px;
+}
+```
+
+#### 4. Mathematical Operation
+```css
+/*SCSS*/
+$carousel-height: 300px;
+.carousel.item {
+  min-height: $carousel-height * 2;
+}
+
+/*LESS*/
+@carousel-height: 300px;
+.carousel.item {
+  min-height: @carousel-height * 2;
+}
+```
