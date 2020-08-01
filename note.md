@@ -263,3 +263,23 @@ i.e. `data-*` attributes in tags (data-toggle, data-spy)
     })
 </script>
 ```
+
+## Note: A single button can support only one Javascript plugin(bootstrap JS Component) via the data-* attributes.
+
+### Bootstrap and JQuery
+Bootstrap Js Components build upon jquery
+#### JQuery
+-  Lightweight Javascript Library
+- Feature-rich:
+  - HTML/DOM/CSS Manipulation
+  - HTML Event Methods
+  - AJAX
+  - Effects and animation
+#### usage
+```js
+$(selector).action()
+```
+- $: Define/access JQuery
+- selector: to query and find html element
+- action: action to be performed on the elements
+- e.g. $("p").hide()
