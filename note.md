@@ -403,3 +403,25 @@ $carousel-height: 300px;
   min-height: @carousel-height * 2;
 }
 ```
+
+## Building and Deployment
+- Example CSS Task for Building deployment
+  - compling sass or less into css
+  - Running autofixer to add any vendor prefixes that are needded
+  - Minification: complier don't care about comments, whitespaces and newline, so it remove it
+  - Concatenation: concate all css files into single file
+- Javascript Task
+  - JShint: check for error and potential problems
+  - concatenation
+  - Uglification: minificaton + mangling (reduce local variable to single letters)
+  - rechecking error
+
+### Automatically recomplie code on-change the file
+- we need to set watch on file
+- NPM model : watch, onChange
+- parallel shell: can execute multiple NPM script parallel
+
+### NPM Scripts
+ - Watch
+ - onchange
+ - parallelshell

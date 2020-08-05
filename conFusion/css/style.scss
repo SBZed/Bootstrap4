@@ -74,3 +74,18 @@ body {
     bottom: 0px;
     z-index: 1;
 }
+
+.header-modal {
+    background-color: $background-dark !important;
+    color: floralwhite !important;
+    .close {
+        color: floralwhite !important;
+    }
+    .modal-title {
+        color: floralwhite !important;
+    }
+}
+
+.body-modal {
+    background-color: $background-pale !important;
+}
