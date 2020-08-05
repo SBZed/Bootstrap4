@@ -425,3 +425,70 @@ $carousel-height: 300px;
  - Watch
  - onchange
  - parallelshell
+
+## Build a distribution folder for deployement
+- We saving all deployemeny related file into single distribution folder - **dist**.
+- Open .gitignore and update it as follows. We do not want the dist folder to be checked into the git repository.
+```.gitignore
+node_modules
+dist
+```
+##### Clean out a folder using the clean NPM module.
+```sh
+npm install --save-dev rimraf
+```
+- past into scripts of package.json
+```json
+"clean": "rimraf dist",
+```
+##### Copy files from one folder to another / copying fonts
+- Our project uses font-awesome fonts. These need to be copied to the distribution folder. To help us do this, install the copyfiles NPM module globally as follows:
+```sh
+npm -g install copyfiles
+```
+- past into scripts of package.json
+```json
+"copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
+```
+##### Prepare a minified and concatenated css file from all the css files used in your project
+- We use the imagemin-cli NPM module to help us to compress our images to reduce the size of the images being used in our project. Install the imagemin-cli module as follows:
+```sh
+npm -g install imagemin-cli
+```
+- past into scripts of package.json
+```json
+"imagemin": "imagemin img/* --out-dir=\"dist/img\"",
+```
+
+##### Prepare an uglified and concatenated JS file containing all the JS code used in your project
+- Usemin do concatenation, uglifiaction other task. it requires support of other packages (uglifyjs, cssmin and htmlmin)
+- Then, install the usemin-cli, cssmin, uglifyjs and htmlmin NPM packages as follows:
+```sh
+npm install --save-dev usemin-cli cssmin uglifyjs htmlmin
+```
+- past into scripts of package.json
+```json
+"usemin": "usemin contactus.html -d dist --htmlmin -o dist/contactus.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
+    "build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin"
+```
+- Further we going to combine all css file into single css file. same for js.
+- Open index.html and surround the css links inclusion code as follows.
+- notice `<!-- build:css css/main.css -->` and `<!-- endbuild -->`. These are important
+```html
+<!-- build:css css/main.css -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <!-- endbuild -->
+```
+- Similarly, open index.html and surround the js script inclusion code as follows:
+```html
+    <!-- build:js js/main.js -->
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
+```
+
