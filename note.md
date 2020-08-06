@@ -492,3 +492,124 @@ npm install --save-dev usemin-cli cssmin uglifyjs htmlmin
     <!-- endbuild -->
 ```
 
+## Task Runners - Grunt and Gulp
+
+### Grunt
+#### Installation
+```sh
+npm install -g grunt-cli
+```
+- This will install the Grunt CLI globally so that you can use them in all projects.
+```sh
+npm install grunt --save-dev
+```
+- This will install local per-project Grunt to use within your project.
+#### Compiling SCSS to CSS
+- grunt-sass: for SCSS to CSS conversion.
+- time-grunt: generates time statistics about how much time each task consumes
+- jit-grunt: enables us to include the necessary downloaded Grunt modules when needed for the tasks.
+```sh
+npm install grunt-sass --save-dev
+npm install time-grunt --save-dev
+npm install jit-grunt --save-dev
+npm install node-sass --save-dev 
+```
+#### Creating a Grunt File as Gruntfile.js
+```js
+'use strict';
+
+module.exports = function (grunt) {
+    // Time how long tasks take. Can help when optimizing build times
+    require('time-grunt')(grunt);
+
+    const sass = require('node-sass');
+
+    // Automatically load required Grunt tasks
+    require('jit-grunt')(grunt);
+
+    // Define the configuration for all the tasks
+    grunt.initConfig({
+        sass: {
+            options: {
+                implementation: sass,
+                outputStyle: 'expanded',
+                sourceMap: true,
+                quiet: true // stop depreciation errors
+            },
+            dist: {
+                files: {
+                    'css/styles.css': 'css/styles.scss'
+                }
+            }
+        }
+    },
+    watch: {
+      files: 'css/*.scss',
+      tasks: ['sass']
+    },
+      browserSync: {
+        dev: {
+          bsFiles: {
+            src : [
+                'css/*.css',
+                '*.html',
+                'js/*.js'
+            ]
+        },
+        options: {
+            watchTask: true,
+            server: {
+                baseDir: "./"
+              }
+          }
+      }
+    }
+    );
+
+    grunt.registerTask('css', ['sass']);
+    grunt.registerTask('default', ['browserSync', 'watch']);
+
+};
+```
+- you can run the grunt SASS task by typing the following at the prompt: `grunt css`
+
+#### Watch and Serve Tasks
+```sh
+npm install grunt-contrib-watch --save-dev
+npm install grunt-browser-sync --save-dev
+```
+- append further code in Gruntfile.js
+```js
+sass: {
+  // Sass options and configuration
+}
+,watch: {
+  files: 'css/*.scss',
+  tasks: ['sass']
+},
+  browserSync: {
+    dev: {
+      bsFiles: {
+        src : [
+            'css/*.css',
+            '*.html',
+            'js/*.js'
+        ]
+    },
+    options: {
+        watchTask: true,
+        server: {
+            baseDir: "./"
+          }
+      }
+  }
+}
+```
+- also add the following task to the Grunt file:
+```js
+grunt.registerTask('default', ['browserSync', 'watch']);
+```
+- Now if you type the following at the command prompt, it will start the server, and open the web page in your default browser. It will also keep a watch on the files in the css folder, and if you update any of them, it will compile the scss file into css file and load the updated page into the browser (livereload)
+```sh
+grunt
+```
